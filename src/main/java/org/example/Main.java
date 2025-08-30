@@ -4,14 +4,28 @@ package org.example;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        System.out.println("\nAtividade: Desafio do Contador. SENAI Sumare - 30/08/2025\n");
+        System.out.println("Estrutura: \n\nCrie um programa que conte de 1 a 100, mas, com as seguintes condições:");
+
+        System.out.println("Para múltiplos de 3, imprima \"Fizz\" em vez do número\n" +
+                "Para múltiplos de 5, imprima \"Buzz\" em vez do número\n" +
+                "Para múltiplos de 3 e 5, imprima \"FizzBuzz\"\n" +
+                "Tempo para resolver: 15 minutos. Depois discutiremos as soluções em grupo.");
+        int i = 1;
+
+        while (i <= 100) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                System.out.println("FizzBuzz");
+            } else if (i % 3 == 0) {
+                System.out.println("Fizz");
+            } else if (i % 5 == 0) {
+                System.out.println("Buzz");
+            } else {
+                System.out.println(i);
+            }
+            i++;
+
         }
     }
 }
