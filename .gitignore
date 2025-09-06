@@ -12,7 +12,10 @@ target/
 *.iml
 *.ipr
 .idea/
+<<<<<<< HEAD
 
+=======
+>>>>>>> b272432 (Caculadora JAVA SENAI SUMARE)
 ### Eclipse ###
 .apt_generated
 .classpath
