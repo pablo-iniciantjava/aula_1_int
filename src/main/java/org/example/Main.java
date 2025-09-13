@@ -1,13 +1,15 @@
 package org.example;
 
+import javax.swing.*;
+import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
+        Scanner scanner = new Scanner(System.in);        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
+        // to see how IntelliJ IDEA suggests fixing it.
         System.out.printf("------------Olá Aluno SENAI-SUMARÉ--------------\n");
         System.out.printf("\nAtividade Verificador de número primo em Java!\n");
 
@@ -19,26 +21,41 @@ public class Main {
         System.out.println("Bem Vindo Aluno\n" + nome + " " + cpf);
         System.out.println("-------------------------------------");
 
-        System.out.println("Escolha o tipo de conversão:");
-        System.out.println("1 - Celsius para Fahrenheit");
-        System.out.println("2 - Fahrenheit para Celsius");
-        System.out.print("Digite 1 ou 2: ");
-        int opcao = scanner.nextInt();
 
-        if (opcao == 1) {
-            System.out.print("Digite a temperatura em Celsius: ");
-            double celsius = scanner.nextDouble();
-            double fahrenheit = (celsius * 9 / 5) + 32;
-            System.out.println(celsius + "°C = " + fahrenheit + "°F");
-        } else if (opcao == 2) {
-            System.out.print("Digite a temperatura em Fahrenheit: ");
-            double fahrenheit = scanner.nextDouble();
-            double celsius = (fahrenheit - 32) * 5 / 9;
-            System.out.println(fahrenheit + "°F = " + celsius + "°C");
-        } else {
-            System.out.println("Opção inválida!");
+        System.out.println("Mas o que são numeros Primos? Segue abaixo exemplo simples: ");
+        System.out.println("úmeros primos são inteiros maiores que 1, divisíveis apenas por 1 e por eles mesmos.");
+        System.out.println("-------------------------------------");
+        System.out.print("Para iniciar, por favor, digite um número: ");
+
+        while (true) {
+            // Lê o número
+            int n = scanner.nextInt();
+
+            // Inicializa a variável primo
+            boolean primo = true;
+
+            // Verifica se é primo
+            if (n <= 1) {
+                primo = false;
+            } else {
+                // Verifica se algum número de 2 até n/2 divide n
+                for (int i = 2; i <= n / 2; i++) {
+                    if (n % i == 0) {
+                        primo = false;
+                        break; // já encontrou um divisor
+                    }
+                }
+            }
+
+
+            // Mostra o resultado
+            if (primo) {
+                System.out.println(n + " é primo!");
+            } else {
+                System.out.println(n + " não é primo.");
+            }
+
+            System.out.println("Quer tentar outro numero: ");
         }
-
-        scanner.close();
     }
 }
