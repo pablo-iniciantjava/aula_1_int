@@ -1,0 +1,139 @@
+Em java, para melhor interação em POO, voce deve criar uma classe da seguinte forma:
+
+Criando um pacote, na pasta Java apos Main, criar uma classe com referencia. 
+
+Java = Pacote = classe. 
+
+Nesta classe, sera feito a classe de referencia: 
+
+package classes;
+
+public class Cachorro {
+    //    Atributos
+    public String nome;
+    public String raca;
+    public int idade;
+
+
+    //     Metodos
+    public void latir() {
+        System.out.println(nome + " está latindo: AU AU!");
+    }
+    public void mostrarDados() {
+        System.out.println("Nome: " + nome + "\nRaça: " + raca + "\nIdade: " + idade);
+
+    }
+
+}
+
+
+
+Por padrao em java, tem uma classe main que é executavel: 
+
+
+package org.example;
+import classes.Cachorro;
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+    public static void main(String[] args) {
+        Cachorro cachorro = new Cachorro();
+        cachorro.nome = "Dog";
+        cachorro.raca = "Fila Boia";
+        cachorro.idade = 20;
+
+
+        cachorro.latir();
+        cachorro.mostrarDados();
+
+
+    }
+}
+
+Aqui um outro exemplo de como utilizar o Get, que é o encapsulamento.
+
+Com as mesma classes mas com Private: 
+
+package classes;
+
+public class Cachorro {
+    //    Atributos
+    private String nome;
+    private String raca;
+    private int idade;
+
+    //metodos encapsulamento
+ private void setNome(String nome) {this.nome = nome;}
+    private void setRaca(String raca) {this.raca = raca;}
+    private void setIdade(int idade) {this.idade = idade;}
+
+   //     Metodos
+    public void mostrarDados() {
+        System.out.println("Nome: " + nome + "\nRaça: " + raca + "\nIdade: " + idade);
+
+    }
+
+}
+*******************************************************************************************************************************
+Para melhor entendimento, com o metodo:  private void setNome(String nome) = ele exatamente entende que na classe de execução:
+
+A Classe de execução, quando voce faz Cachorro dog1 = new Cachorro(); voce esta definindo que dog1 sera a classe cachorro e 
+inicializando ela com new, o private void setNome(String nome) recebera, valores nao mais como classe cachorro mas como  dog1, com isso, voce atribui valores a variavel dog1 . 
+
+Quando voce faz: private void setNome(String nome) {this.nome = nome;}
+
+Voce esta dizendo: que private void setNome(String nome) recebera qual valor ? e {this.nome = nome;} ?
+
+
+(public class Main {
+    public static void main(String[] args) {
+        Cachorro dog1 = new Cachorro(); Cria objeto dog1
+        dog1.setNome("Dog"); // envia o valor "Dog" para o método
+        dog1.setRaca("Fila Boia);  // envia o valor "Fila Boia" para o método
+        dog1.setIdade(20);)  // envia o valor "20" para o método
+*******************************************************************************************************************************
+   
+
+
+
+✅ Etapa 1: Você instancia o objeto
+Cachorro dog1 = new Cachorro();
+
+
+Aqui, você cria um novo objeto da classe Cachorro.
+
+Esse objeto tem seus próprios atributos: nome, raca e idade, inicialmente sem valor definido (ou null para String, 0 para int).
+
+
+ ✅ Etapa 2: Você chama os métodos set
+dog1.setNome("Dog");
+dog1.setRaca("Fila Boia");
+dog1.setIdade(20);
+
+Quais metodos?
+
+Esses: 
+    private void setNome(String nome) {this.nome = nome;}
+    private void setRaca(String raca) {this.raca = raca;}
+    private void setIdade(int idade) {this.idade = idade;}
+
+
+2️⃣ dog1.setNome("Dog");
+
+O método é chamado com "Dog" como argumento:
+
+public void setNome(String nome) {
+    this.nome = nome;
+}
+
+
+A JVM faz:
+
+Cria uma variável local chamada nome com valor "Dog".
+
+Atribui isso ao campo da classe com this.nome = nome.
+
+Resultado: agora dog1.nome = "Dog".
+
+
+
